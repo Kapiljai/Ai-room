@@ -2,6 +2,9 @@
 
 Production-minded take-home implementation for room visualization.
 
+
+php artisan serve url  for 9000 port number
+ php -S 127.0.0.1:9000 -t "your c drive path"
 ## Stack
 - Laravel 11 / PHP 8.2
 - Laravel Queue + Redis
