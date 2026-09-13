@@ -5,7 +5,7 @@ Production-minded take-home implementation for room visualization.
 ## Stack
 - Laravel 11 / PHP 8.2
 - Laravel Queue + Redis
-- SQLite for local development (PostgreSQL/MySQL ready)
+- MYSQL for local development (PostgreSQL/MySQL ready)
 - React 18 + TypeScript + Vite
 - Tailwind-free, clean CSS UI
 - AI pipeline abstraction: Mock driver by default, HTTP driver for a real CV/GenAI service
@@ -23,7 +23,6 @@ Production-minded take-home implementation for room visualization.
 cp .env.example .env
 composer install
 php artisan key:generate
-mkdir -p database && touch database/database.sqlite
 php artisan migrate
 php artisan storage:link
 php artisan serve
@@ -40,6 +39,12 @@ Worker:
 ```bash
 php artisan queue:work --tries=3
 ```
+
+Important Note  if you are doing mock then 
+replace your .env with this
+<!-- CACHE_STORE=file
+SESSION_DRIVER=file
+QUEUE_CONNECTION=sync -->
 
 For Redis, set `QUEUE_CONNECTION=redis`. For real inference, set `AI_DRIVER=http` and provide `AI_SERVICE_URL`.
 
