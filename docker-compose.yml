@@ -1,0 +1,14 @@
+services:
+  app:
+    build: {context: ., dockerfile: Dockerfile}
+    ports: ["8000:8000"]
+    environment: {APP_ENV: local, QUEUE_CONNECTION: redis, REDIS_HOST: redis, AI_DRIVER: mock}
+    depends_on: [redis]
+  worker:
+    build: {context: ., dockerfile: Dockerfile}
+    command: php artisan queue:work redis --sleep=1 --tries=3 --timeout=120
+    environment: {APP_ENV: local, QUEUE_CONNECTION: redis, REDIS_HOST: redis, AI_DRIVER: mock}
+    depends_on: [redis]
+  redis:
+    image: redis:7-alpine
+    ports: ["6379:6379"]

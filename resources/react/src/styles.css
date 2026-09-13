@@ -1,0 +1,150 @@
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    background: #f5f7fb;
+    color: #172033;
+    font-family: Inter, system-ui, sans-serif
+}
+
+main {
+    max-width: 980px;
+    margin: 50px auto;
+    padding: 0 20px
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #e6e9ef;
+    border-radius: 18px;
+    padding: 28px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 30px rgba(20, 30, 50, .06)
+}
+
+h1 {
+    margin: 0 0 8px;
+    font-size: 32px
+}
+
+h2 {
+    margin: 0
+}
+
+.muted {
+    color: #667085
+}
+
+.drop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: 2px dashed #cbd3df;
+    border-radius: 14px;
+    padding: 45px 20px;
+    margin: 24px 0;
+    cursor: pointer
+}
+
+.drop span {
+    color: #7a8495;
+    font-size: 14px
+}
+
+.drop input {
+    display: none
+}
+
+button {
+    border: 0;
+    border-radius: 10px;
+    padding: 12px 20px;
+    background: #172033;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer
+}
+
+button:disabled {
+    opacity: .5;
+    cursor: not-allowed
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.badge {
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+    background: #edf1f7
+}
+
+.badge.completed {
+    background: #e7f7ed
+}
+
+.badge.failed {
+    background: #ffe8e8
+}
+
+.progress {
+    height: 10px;
+    background: #edf0f4;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 20px
+}
+
+.progress i {
+    display: block;
+    height: 100%;
+    background: #172033;
+    transition: width .3s
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 22px
+}
+
+.grid article {
+    border: 1px solid #e5e8ee;
+    border-radius: 12px;
+    padding: 14px
+}
+
+.grid img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px
+}
+
+.grid h3 {
+    text-transform: capitalize
+}
+
+.error {
+    color: #c62828
+}
+
+@media(max-width:700px) {
+    .grid {
+        grid-template-columns: 1fr
+    }
+
+    main {
+        margin: 20px auto
+    }
+}
